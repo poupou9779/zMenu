@@ -1,27 +1,27 @@
 #include <stdio.h>
-#include "API.h"
+#include "Menu.h"
 #include "fonctions.h"
 
 int main(void) {
     int n = 0;
     struct Menu *menu;
-    API_initialiser();
-    menu = API_allouerMenu();
+    Menu_initialiser();
+    menu = Menu_allouerMenu();
     if(menu != NULL) {
-        if(API_ajouterFonction(menu, riri, "riri") != API_SUCCESS)
-            API_Erreur(stdout);
-        if(API_ajouterFonction(menu, fifi, "fifi") != API_SUCCESS)
-            API_Erreur(stdout);
-        if(API_ajouterFonction(menu, loulou, "loulou") != API_SUCCESS)
-            API_Erreur(stdout);
-        if(API_afficherMenu(menu) != API_SUCCESS)
-            API_Erreur(stdout);
+        if(Menu_ajouterFonction(menu, riri, "riri") != MENU_SUCCESS)
+            Menu_erreur(stdout);
+        if(Menu_ajouterFonction(menu, fifi, "fifi") != MENU_SUCCESS)
+            Menu_erreur(stdout);
+        if(Menu_ajouterFonction(menu, loulou, "loulou") != MENU_SUCCESS)
+            Menu_erreur(stdout);
+        if(Menu_afficherMenu(menu) != MENU_SUCCESS)
+            Menu_erreur(stdout);
         scanf("%d", &n);
-        if(API_executerFonction(menu, n) != API_SUCCESS)
-            API_Erreur(stdout);
-        menu = API_desallouerMenu(menu);
+        if(Menu_executerFonction(menu, n) != MENU_SUCCESS)
+            Menu_erreur(stdout);
+        menu = Menu_desallouerMenu(menu);
     }
-    API_Quitter();
+    Menu_Quitter();
     return 0;
 }
 
