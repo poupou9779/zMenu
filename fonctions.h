@@ -1,11 +1,10 @@
 #ifndef FONCTIONS_H
 #define FONCTIONS_H
 
-void riri(void);
-void fifi(void);
-void loulou(void);
-void donald(void);
-void picsou(void);
+int riri(int, char *[]);
+int fifi(int, char *[]);
+int loulou(int, char *[]);
+int donald(int, char *[]);
+int picsou(int, char *[]);
 
 #endif // FONCTIONS_H
-
